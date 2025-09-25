@@ -33,7 +33,18 @@ app.set("view engine", "ejs"); // backend ichida ejs orqali frontend yasaymiz
 
 //4: Routing code
 app.post("/create-item", (req, res) => {
+
     //TODO: code with db here
+    console.log("user Entered/create-item");
+    const new_reja = req.body.reja;
+    db.collection("plans").insertOne({ reja: new_reja }, (err, data) => {
+        if (err) {
+            console.log(err);
+            res.end("something went wrong");
+        } else {
+            res.end("successfully added");
+        }
+    })
 });
 
 app.get("/author", (req, res) => {
@@ -42,7 +53,17 @@ app.get("/author", (req, res) => {
 
 
 app.get("/", function (req, res) {
-    res.render("reja")
+    console.log("user Entered/");
+    db.collection("plans").find().toArray((err, data) => {
+        if (err) {
+            console.log(err);
+            res.end("Something went wrong");
+        }
+        else {
+            console.log(data);
+            res.render("reja", { items: data });
+        }
+    });
 });
 
 module.exports = app;

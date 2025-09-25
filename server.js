@@ -3,7 +3,7 @@ const http = require("http");
 const mongodb = require("mongodb");
 
 let db;
-const connectionSting = "mongodb+srv://Jaloliddin18:Yakkasaray_1@cluster0.ukxivui.mongodb.net/"
+const connectionSting = "mongodb+srv://Jaloliddin18:Yakkasaray_1@cluster0.ukxivui.mongodb.net/Reja"
 
 mongodb.connect(connectionSting, { useNewUrlParser: true, useUnifiedTopology: true }, (err, client) => {
     if (err) console.log("Error on connection MongoDB");
