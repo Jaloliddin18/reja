@@ -100,19 +100,44 @@
 
 // masalani yechimi:
 
-function numOfRepeats(input, checking) {
-    if (!input || !checking) return 0; // handle empty inputs
+// function numOfRepeats(input, checking) {
+//     if (!input || !checking) return 0; // handle empty inputs
 
-    const a = input.toLowerCase();
-    const b = checking.toLowerCase();
+//     const a = input.toLowerCase();
+//     const b = checking.toLowerCase();
 
+//     let count = 0;
+//     b.split("").forEach(letter => {
+//         if (letter === a) {
+//             count++;
+//         }
+//     });
+//     return count;
+// }
+// // Test example
+// console.log(`Number of occurances is: ${numOfRepeats("u", "Ronaldo says: SIUUUUUUUUUUUU ")}`); 
+
+
+
+
+// TASK B
+
+// Shunday, function tuzingki, bu function yagona parametrga ega bo'lib
+// string tarkibidagi sonlar miqdorini qaytarsin
+
+// Masalan: countDigits("ad2a54y79wet0sfgb9")
+// Yuqoridagi string tarkibida 7 dona raqam qatnashganligi uchun, natija 7 qaytadi
+
+
+
+function countNumbers(input) {
     let count = 0;
-    b.split("").forEach(letter => {
-        if (letter === a) {
+    for (let char in input) {
+        if (input[char] >= 0 && input[char] <= 9) {
             count++;
         }
-    });
+    }
     return count;
 }
-// Test example
-console.log(`Number of occurances is: ${numOfRepeats("U", "Ronaldo says: SIUUUUUUUUUUUU ")}`); 
+
+console.log(countNumbers("ey7338gbvyyfe88geeb3eud"))
