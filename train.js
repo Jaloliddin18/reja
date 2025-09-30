@@ -129,15 +129,87 @@
 // Yuqoridagi string tarkibida 7 dona raqam qatnashganligi uchun, natija 7 qaytadi
 
 
+// function countNumbers(input) {
+//     let count = 0;
+//     for (let char in input) {
+//         if (input[char] >= 0 && input[char] <= 9) {
+//             count++;
+//         }
+//     }
+//     return count;
+// }
 
-function countNumbers(input) {
-    let count = 0;
-    for (let char in input) {
-        if (input[char] >= 0 && input[char] <= 9) {
-            count++;
-        }
+// console.log(countNumbers("ey7338gbvyyfe88geeb3eud"))
+
+
+
+
+
+
+
+// TASK-C
+
+// Shop nomli class tuzing, va bu class 3 xill parametr qabul qilsin.
+// Hamda classning quyidagdek 3'ta metodi bo'lsin:
+
+// 1) qoldiq
+// 2) sotish
+// 3) qabul
+
+// Har bir metod ishga tushgan vaqtda log qilinsin
+
+// MASALAN:
+// const shop = new Shop(4, 5, 2)
+
+// shop.qoldiq();
+// natija qaytishi kerak: Hozir 20: 40'da 4'ta non, 5'ta lag'mon va 2'ta cola mavjud
+
+// shop.sotish("non", 3); & shop.qabul("cola", 4); & shop.qoldiq();
+// Natija qaytishi kerak: Hozir 20:50da 1ta non, 5ta lag'mon va 6ta cola mavjud!
+
+
+const moment = require('moment');
+const now = new Date;
+const time = now.toLocaleTimeString();
+
+
+class Shop {
+    constructor(bread, noodle, coke) {
+        this.bread = bread;
+        this.noodle = noodle;
+        this.coke = coke;
     }
-    return count;
+    balance() {
+        console.log(`At this time, ${time}, there are ${this.bread} breads , ${this.noodle} noodles and  ${this.coke} cokes!`);
+    }
+    sale(bread, quantity) {
+        this.bread = this.bread - quantity;
+        console.log(`At this time, ${time}, there are ${this.bread} breads , ${this.noodle} noodles and  ${this.coke} cokes!`);
+    }
+    order(coke, quantity) {
+        console.log(`At this time, ${time}, there are ${this.bread} breads , ${this.noodle} noodles and  ${this.coke} cokes!`);
+    }
+    balance() {
+        console.log(`At this time, ${time}, there are ${this.bread} breads , ${this.noodle} noodles and  ${this.coke} cokes!`);
+    }
 }
 
-console.log(countNumbers("ey7338gbvyyfe88geeb3eud"))
+
+const shop = new Shop(6, 5, 2);
+shop.balance();
+shop.sale("bread", 3);
+shop.order("coke", 4);
+shop.balance();
+
+
+
+
+
+
+
+
+
+
+
+
+
