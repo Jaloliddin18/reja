@@ -27,3 +27,24 @@ document.getElementById("create-form").addEventListener("submit", function (e) {
             console.log("Iltimos qaytadan harakat qiling!");
         });
 });
+
+document.addEventListener("click", function (e) {
+    console.log(e);
+    //detele oper
+    console.log(e.target);
+    if (e.target.classList.contains("delete-me")) {
+        if (confirm("Do you really want to delete?")) {
+            axios.post("/delete-item", { id: e.target.getAttribute("data-id") }).then((response) => {
+                console.log(response.data);
+                e.target.parentElement.parentElement.remove();
+            }).catch((err) => {
+                console.log("Please try one more time");
+            });
+        }
+    }
+
+    //edit oper
+    if (e.target.classList.contains("edit-me")) {
+        alert("Siz Edit tugmasini bosdingiz");
+    }
+});
