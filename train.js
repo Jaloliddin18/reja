@@ -168,42 +168,60 @@
 // Natija qaytishi kerak: Hozir 20:50da 1ta non, 5ta lag'mon va 6ta cola mavjud!
 
 
-const moment = require('moment');
-const now = new Date;
-const time = now.toLocaleTimeString();
+// const moment = require('moment');
+// const now = new Date;
+// const time = now.toLocaleTimeString();
 
 
-class Shop {
-    constructor(bread, noodle, coke) {
-        this.bread = bread;
-        this.noodle = noodle;
-        this.coke = coke;
-    }
-    balance() {
-        console.log(`At this time, ${time}, there are ${this.bread} breads , ${this.noodle} noodles and  ${this.coke} cokes!`);
-    }
-    sale(bread, quantity) {
-        this.bread = this.bread - quantity;
-        console.log(`At this time, ${time}, there are ${this.bread} breads , ${this.noodle} noodles and  ${this.coke} cokes!`);
-    }
-    order(coke, quantity) {
-        console.log(`At this time, ${time}, there are ${this.bread} breads , ${this.noodle} noodles and  ${this.coke} cokes!`);
-    }
-    balance() {
-        console.log(`At this time, ${time}, there are ${this.bread} breads , ${this.noodle} noodles and  ${this.coke} cokes!`);
-    }
+// class Shop {
+//     constructor(bread, noodle, coke) {
+//         this.bread = bread;
+//         this.noodle = noodle;
+//         this.coke = coke;
+//     }
+//     balance() {
+//         console.log(`At this time, ${time}, there are ${this.bread} breads , ${this.noodle} noodles and  ${this.coke} cokes!`);
+//     }
+//     sale(bread, quantity) {
+//         this.bread = this.bread - quantity;
+//         console.log(`At this time, ${time}, there are ${this.bread} breads , ${this.noodle} noodles and  ${this.coke} cokes!`);
+//     }
+//     order(coke, quantity) {
+//         console.log(`At this time, ${time}, there are ${this.bread} breads , ${this.noodle} noodles and  ${this.coke} cokes!`);
+//     }
+//     balance() {
+//         console.log(`At this time, ${time}, there are ${this.bread} breads , ${this.noodle} noodles and  ${this.coke} cokes!`);
+//     }
+// }
+
+
+// const shop = new Shop(6, 5, 2);
+// shop.balance();
+// shop.sale("bread", 3);
+// shop.order("coke", 4);
+// shop.balance();
+
+
+
+// TASK D
+
+// Ikkita parametra ega function tuzing, va functioning
+// berilgan birinchi va ikkinchi parametr qiymatlari o'zaro to'liq
+// mos kelsa true qiymat qaytarsin
+
+// Masalan: checkContent("mitgroup", "gmtiprou");
+// Yuqoridagi misolda birinchi va ikkinchi parametr qiymatli bir xil
+// ya'ni bir xil harflar qatnashganligi uchun true qiymat qaytaradi.
+
+
+function checkTheContent(input1, input2) {
+    const a = input1.split("").sort().join("");
+    const b = input2.split("").sort().join("");
+
+    return a === b;
 }
 
-
-const shop = new Shop(6, 5, 2);
-shop.balance();
-shop.sale("bread", 3);
-shop.order("coke", 4);
-shop.balance();
-
-
-
-
+console.log(checkTheContent('siu', 'sui'));
 
 
 
