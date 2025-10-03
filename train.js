@@ -214,15 +214,32 @@
 // ya'ni bir xil harflar qatnashganligi uchun true qiymat qaytaradi.
 
 
-function checkTheContent(input1, input2) {
-    const a = input1.split("").sort().join("");
-    const b = input2.split("").sort().join("");
+// function checkTheContent(input1, input2) {
+//     const a = input1.split("").sort().join("");
+//     const b = input2.split("").sort().join("");
 
-    return a === b;
+//     return a === b;
+// }
+
+// console.log(checkTheContent('siu', 'sui'));
+
+
+
+
+
+// E-TASK: 
+
+// Shunday function tuzing, u bitta string argumentni qabul qilib osha stringni teskari qilib return qilsin.
+// MASALAN: getReverse("hello") return qilsin "olleh"
+
+
+
+function returnReverse(userInput) {
+    return userInput.split("").reverse().join("");
 }
 
-console.log(checkTheContent('siu', 'sui'));
-
+console.log(returnReverse("yag ma i"));
+console.log(returnReverse("ㅋㅋㅋ gniddik tsuj"));
 
 
 
