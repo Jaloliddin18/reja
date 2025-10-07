@@ -232,16 +232,32 @@
 // Shunday function tuzing, u bitta string argumentni qabul qilib osha stringni teskari qilib return qilsin.
 // MASALAN: getReverse("hello") return qilsin "olleh"
 
+// function returnReverse(userInput) {
+//     return userInput.split("").reverse().join("");
+// }
+
+// console.log(returnReverse("yag ma i"));
+// console.log(returnReverse("ㅋㅋㅋ gniddik tsuj"));
 
 
-function returnReverse(userInput) {
-    return userInput.split("").reverse().join("");
+
+
+
+
+// TASK F
+
+// Yagona string argumentga ega findDoublers nomli function tuzing
+// Agar stringda bittadan ortiq bir xil harflar ishtirok etgan bo'lsa
+// true yokida false natija qaytarsin.
+
+// MASALAN: findDoublers("hello"); natija true qaytadi. Sababi ikki marotaba takrorlangan 'll' harfi mavjud!
+
+function findDoublers(str) {
+    return new Set(str).size !== str.length;
 }
 
-console.log(returnReverse("yag ma i"));
-console.log(returnReverse("ㅋㅋㅋ gniddik tsuj"));
 
-
+console.log(findDoublers("hello"));
 
 
 
